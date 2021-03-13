@@ -37,9 +37,10 @@ public class MainActivity extends AppCompatActivity {
                 double rate=Double.parseDouble(interest.getText().toString());
                 double time=Double.parseDouble(tenure.getText().toString());
 
-                rate=rate/(12*100);
-                time=time*12;
+                rate=rate/(12*100);//interest calculation
+                time=time*12;//year to month
 
+                //calculation for EMI
                 double emi= (princ * rate * (float)Math.pow(1+rate,time))/(float)(Math.pow(1+rate,time)-1);
                 print.setText(Double.toString(emi));
             }
