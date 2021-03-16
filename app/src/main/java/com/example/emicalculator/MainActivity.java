@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 principal.setText("");
                 interest.setText("");
                 tenure.setText("");
+                print.setText("");
             }
         });
     }
