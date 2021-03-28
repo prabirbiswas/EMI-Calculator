@@ -9,6 +9,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -34,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         cal = (Button) findViewById(R.id.calculateButton);
         reset = (Button) findViewById(R.id.resetButton);
         print = (TextView) findViewById(R.id.print);
+
+
 
         principal.addTextChangedListener(input);
         interest.addTextChangedListener(input);
