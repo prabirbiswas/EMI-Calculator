@@ -126,36 +126,36 @@
         android:id="@+id/tenRadio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="1dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/procText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+      >
 
         <RadioButton
-            android:id="@+id/yearButton"
+            android:id="@+id/yrRadio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:background="@drawable/radio_selector"
-            android:button="@color/transparent"
             android:elevation="4dp"
-            android:padding="10dp"
-            android:text="Years" />
+            android:padding="5dp"
+            android:textSize="20dp"
+            android:text="Years"
+            android:buttonTint="@color/purple_500"
+
+           />
 
         <RadioButton
-            android:id="@+id/monthButton"
+            android:id="@+id/monRadio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:background="@drawable/radio_selector"
-            android:button="@color/transparent"
             android:elevation="4dp"
+            android:textSize="20dp"
             android:padding="10dp"
             android:text="Months"
-            tools:layout_editor_absoluteX="213dp"
-            tools:layout_editor_absoluteY="391dp" />
-
+           android:buttonTint="@color/purple_500"
+            />
     </RadioGroup>
 
 

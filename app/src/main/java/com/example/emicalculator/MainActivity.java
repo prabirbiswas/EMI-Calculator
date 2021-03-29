@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     Button cal;
     Button reset;
     TextView print;
-
+    RadioGroup g;
 
 
     @Override
@@ -36,8 +36,7 @@ public class MainActivity extends AppCompatActivity {
         cal = (Button) findViewById(R.id.calculateButton);
         reset = (Button) findViewById(R.id.resetButton);
         print = (TextView) findViewById(R.id.print);
-        RadioGroup g=(RadioGroup)findViewById(R.id.tenRadio);
-
+        g=(RadioGroup)findViewById(R.id.tenRadio);
 
         principal.addTextChangedListener(input);
         interest.addTextChangedListener(input);
@@ -52,26 +51,26 @@ public class MainActivity extends AppCompatActivity {
                 double rate=Double.parseDouble(interest.getText().toString());
                 double time=Double.parseDouble(tenure.getText().toString());
 
-                rate=rate/(12*100);//interest calculation
+
 
 
                 switch (g.getCheckedRadioButtonId()){
-                    case R.id.yearButton:
+                    case R.id.yrRadio:
                         time=time*12;
                         break;
 
-                    case R.id.monthButton:
-                        time=time/12;
+                    case R.id.monRadio:
                         break;
                 }
-
+                rate=rate/(12*100);//interest calculation
 
                 //calculation for EMI
                 double emi= (princ * rate * (float)Math.pow(1+rate,time))/(float)(Math.pow(1+rate,time)-1);
+
                 double amount=emi*time;
 
-                String s= Double.toString(emi);
-                String s1=Double.toString(amount);
+                String s= String.format("%.2f",emi);
+                String s1=String.format("%.2f",amount);
 
 
                 Intent intent = new Intent(getApplicationContext(),popup.class);
