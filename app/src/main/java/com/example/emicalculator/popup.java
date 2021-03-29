@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 public class popup extends AppCompatActivity {
     TextView printEMI;
+    TextView printAmount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,10 +19,13 @@ public class popup extends AppCompatActivity {
         getSupportActionBar().hide();
 
         printEMI=(TextView) findViewById(R.id.print);
-
+        printAmount=(TextView)findViewById(R.id.printAmount);
         Intent intent =getIntent();
         String emi =intent.getStringExtra("emi");
+        String amount=intent.getStringExtra("amount");
+
         printEMI.setText(emi);
+        printAmount.setText(amount);
 
         }
  }

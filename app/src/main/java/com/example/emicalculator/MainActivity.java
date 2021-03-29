@@ -9,6 +9,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         cal = (Button) findViewById(R.id.calculateButton);
         reset = (Button) findViewById(R.id.resetButton);
         print = (TextView) findViewById(R.id.print);
-
+        RadioGroup g=(RadioGroup)findViewById(R.id.tenRadio);
 
 
         principal.addTextChangedListener(input);
@@ -52,11 +53,25 @@ public class MainActivity extends AppCompatActivity {
                 double time=Double.parseDouble(tenure.getText().toString());
 
                 rate=rate/(12*100);//interest calculation
-                time=time*12;//year to month
+
+
+                switch (g.getCheckedRadioButtonId()){
+                    case R.id.yearButton:
+                        time=time*12;
+                        break;
+
+                    case R.id.monthButton:
+                        time=time/12;
+                        break;
+                }
+
 
                 //calculation for EMI
                 double emi= (princ * rate * (float)Math.pow(1+rate,time))/(float)(Math.pow(1+rate,time)-1);
+                double amount=emi*time;
+
                 String s= Double.toString(emi);
+                String s1=Double.toString(amount);
 
 
                 Intent intent = new Intent(getApplicationContext(),popup.class);
@@ -64,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("rate",rate);
                 intent.putExtra("time",time);
                 intent.putExtra("emi",s);
+                intent.putExtra("amount",s1);
                 startActivity(intent);
             }
         });
