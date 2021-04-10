@@ -18,9 +18,9 @@ public class MainActivity extends AppCompatActivity {
     EditText principal;
     EditText interest;
     EditText tenure;
+    EditText process;
     Button cal;
     Button reset;
-    TextView print;
     RadioGroup g;
 
 
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         tenure = (EditText) findViewById(R.id.tenureText);
         cal = (Button) findViewById(R.id.calculateButton);
         reset = (Button) findViewById(R.id.resetButton);
-        print = (TextView) findViewById(R.id.print);
+        process=(EditText)findViewById(R.id.procText);
         g=(RadioGroup)findViewById(R.id.tenRadio);
 
         principal.addTextChangedListener(input);
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 double princ=Double.parseDouble(principal.getText().toString());
                 double rate=Double.parseDouble(interest.getText().toString());
-                double time=Double.parseDouble(tenure.getText().toString());
+                int time=Integer.parseInt(tenure.getText().toString());
 
 
 
@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.monRadio:
                         break;
                 }
+                Double ratInt=rate;
                 rate=rate/(12*100);//interest calculation
 
                 //calculation for EMI
@@ -69,16 +70,17 @@ public class MainActivity extends AppCompatActivity {
 
                 double amount=emi*time;
 
-                String s= String.format("%.2f",emi);
-                String s1=String.format("%.2f",amount);
+             //  String s= String.format("%.2f",emi);
+               //String s1=String.format("%.2f",amount);
+
 
 
                 Intent intent = new Intent(getApplicationContext(),popup.class);
                 intent.putExtra("principal",princ);
-                intent.putExtra("rate",rate);
+                intent.putExtra("rate",ratInt);
                 intent.putExtra("time",time);
-                intent.putExtra("emi",s);
-                intent.putExtra("amount",s1);
+                intent.putExtra("emi",emi);
+                intent.putExtra("amount",amount);
                 startActivity(intent);
             }
         });
@@ -88,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
                 principal.setText("");
                 interest.setText("");
                 tenure.setText("");
-                print.setText("");
+                process.setText("");
 
             }
         });
