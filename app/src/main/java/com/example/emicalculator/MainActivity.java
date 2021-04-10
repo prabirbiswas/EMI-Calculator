@@ -51,9 +51,6 @@ public class MainActivity extends AppCompatActivity {
                 double rate=Double.parseDouble(interest.getText().toString());
                 int time=Integer.parseInt(tenure.getText().toString());
 
-
-
-
                 switch (g.getCheckedRadioButtonId()){
                     case R.id.yrRadio:
                         time=time*12;
@@ -63,18 +60,11 @@ public class MainActivity extends AppCompatActivity {
                         break;
                 }
                 Double ratInt=rate;
-                rate=rate/(12*100);//interest calculation
+                rate=rate/(12*100);
 
                 //calculation for EMI
                 double emi= (princ * rate * (float)Math.pow(1+rate,time))/(float)(Math.pow(1+rate,time)-1);
-
                 double amount=emi*time;
-
-             //  String s= String.format("%.2f",emi);
-               //String s1=String.format("%.2f",amount);
-
-
-
                 Intent intent = new Intent(getApplicationContext(),popup.class);
                 intent.putExtra("principal",princ);
                 intent.putExtra("rate",ratInt);
