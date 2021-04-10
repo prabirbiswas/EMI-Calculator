@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
         tenure = (EditText) findViewById(R.id.tenureText);
         cal = (Button) findViewById(R.id.calculateButton);
         reset = (Button) findViewById(R.id.resetButton);
-        process=(EditText)findViewById(R.id.procText);
         g=(RadioGroup)findViewById(R.id.tenRadio);
 
         principal.addTextChangedListener(input);

@@ -10,10 +10,10 @@
     <View
         android:id="@+id/view"
         android:layout_width="wrap_content"
-        android:layout_height="659dp"
+        android:layout_height="580dp"
         android:background="@drawable/bg_header"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -82,80 +82,68 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/procText"
-        android:layout_width="340dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="460dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/bg_input"
-        android:hint="Processing Fees"
-        android:inputType="number"
-        android:maxLength="2"
-        android:padding="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/calculateButton"
         android:layout_width="127dp"
         android:layout_height="50dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="19dp"
         android:background="@drawable/bg_button"
         android:enabled="false"
         android:text="Calculate"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/resetButton"
-        app:layout_constraintTop_toBottomOf="@+id/procText" />
+        app:layout_constraintTop_toBottomOf="@+id/tenRadio" />
 
     <Button
         android:id="@+id/resetButton"
         android:layout_width="127dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="40dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="19dp"
         android:background="@drawable/bg_button"
         android:text="Reset"
         app:layout_constraintLeft_toRightOf="@id/calculateButton"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/procText" />
+        app:layout_constraintTop_toBottomOf="@+id/tenRadio" />
 
     <RadioGroup
         android:id="@+id/tenRadio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="19dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/procText"
+        app:layout_constraintBottom_toTopOf="@+id/calculateButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
-      >
+        app:layout_constraintTop_toBottomOf="@+id/tenureText">
 
         <RadioButton
             android:id="@+id/yrRadio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            android:buttonTint="@color/purple_500"
             android:elevation="4dp"
             android:padding="5dp"
-            android:textSize="20dp"
             android:text="Years"
-            android:buttonTint="@color/purple_500"
+            android:textSize="20dp"
 
-           />
+            />
 
         <RadioButton
             android:id="@+id/monRadio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            android:buttonTint="@color/purple_500"
             android:elevation="4dp"
-            android:textSize="20dp"
             android:padding="10dp"
             android:text="Months"
-           android:buttonTint="@color/purple_500"
-            />
+            android:textSize="20dp"
+            tools:layout_editor_absoluteX="193dp"
+            tools:layout_editor_absoluteY="398dp" />
     </RadioGroup>
 
 
