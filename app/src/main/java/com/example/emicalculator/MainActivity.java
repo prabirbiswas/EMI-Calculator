@@ -1,6 +1,7 @@
 package com.example.emicalculator;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,10 +16,9 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText principal;
-    EditText interest;
-    EditText tenure;
-    EditText process;
+    public EditText principal;
+    public EditText interest;
+    public EditText tenure;
     Button cal;
     Button reset;
     RadioGroup g;
@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
 
         principal = (EditText) findViewById(R.id.principalText);
         interest = (EditText) findViewById(R.id.interestText);
@@ -79,7 +81,6 @@ public class MainActivity extends AppCompatActivity {
                 principal.setText("");
                 interest.setText("");
                 tenure.setText("");
-                process.setText("");
 
             }
         });
