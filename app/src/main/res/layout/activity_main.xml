@@ -28,7 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        />
+        android:contentDescription="@string/todo" />
 
 
     <EditText
@@ -39,14 +39,15 @@
         android:layout_marginTop="216dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/bg_input"
-        android:hint="Principal Amount"
+        android:hint="@string/principal_amount"
         android:inputType="number"
         android:maxLength="10"
         android:padding="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.418"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/interestText"
@@ -56,14 +57,15 @@
         android:layout_marginTop="280dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/bg_input"
-        android:hint=" Rate of Interest"
+        android:hint="@string/rate_of_interest"
         android:inputType="numberDecimal"
         android:maxLength="5"
         android:padding="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/tenureText"
@@ -73,14 +75,15 @@
         android:layout_marginTop="340dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/bg_input"
-        android:hint="Period"
+        android:hint="@string/period"
         android:inputType="number"
         android:maxLength="2"
         android:padding="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints="" />
 
 
     <Button
@@ -90,7 +93,7 @@
         android:layout_marginTop="19dp"
         android:background="@drawable/bg_button"
         android:enabled="false"
-        android:text="Calculate"
+        android:text="@string/calculate"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/resetButton"
         app:layout_constraintTop_toBottomOf="@+id/tenRadio" />
@@ -101,7 +104,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="19dp"
         android:background="@drawable/bg_button"
-        android:text="Reset"
+        android:text="@string/reset"
         app:layout_constraintLeft_toRightOf="@id/calculateButton"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tenRadio" />
@@ -127,8 +130,8 @@
             android:buttonTint="@color/purple_500"
             android:elevation="4dp"
             android:padding="5dp"
-            android:text="Years"
-            android:textSize="20dp"
+            android:text="@string/years"
+            android:textSize="20sp"
 
             />
 
@@ -140,8 +143,8 @@
             android:buttonTint="@color/purple_500"
             android:elevation="4dp"
             android:padding="10dp"
-            android:text="Months"
-            android:textSize="20dp"
+            android:text="@string/months"
+            android:textSize="20sp"
             tools:layout_editor_absoluteX="193dp"
             tools:layout_editor_absoluteY="398dp" />
     </RadioGroup>
