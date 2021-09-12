@@ -77,7 +77,7 @@
         android:background="@drawable/bg_input"
         android:hint="@string/period"
         android:inputType="number"
-        android:maxLength="2"
+        android:maxLength="3"
         android:padding="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
